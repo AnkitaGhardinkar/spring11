@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+                xmlns:sec="http://thymeleaf.org/extras/spring-springsecurity">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring App</title>
+</head>
+<body>
+   <h1>Welcome to spring App</h1>
+   <hr>
+   <h2 sec:authentication="principal.username"></h2>
+   <h2 sec:authentication="principal.authorities"></h2>
+   <hr>
+   <a th:href="@{/requirements}">Get Requirement Page</a>
+   <a th:href="@{/admin}">Get Admin Page</a>
+   <hr>
+   <form action ="#" th:action="@{/logout}" method="post">
+       <input type="submit" value="logout"/>
+</form>
+</body>
+</html>
